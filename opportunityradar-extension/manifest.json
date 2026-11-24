@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "OpportunityRadar",
+  "version": "1.0.0",
+  "description": "Discover, understand, and save student opportunities while you browse.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "notifications",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [],
+  "action": {
+    "default_title": "OpportunityRadar",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}

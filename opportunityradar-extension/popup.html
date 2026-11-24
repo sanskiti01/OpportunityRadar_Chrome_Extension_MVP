@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpportunityRadar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><span>O</span><i></i></div>
+        <div><div class="brand-name">opportunity<span>radar</span></div><div class="brand-caption">YOUR NEXT YES STARTS HERE</div></div>
+      </div>
+      <button class="icon-btn" id="settingsBtn" title="Settings" aria-label="Settings">⚙</button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> BROWSER INTELLIGENCE</div>
+      <h1>Don't let a great<br><em>opportunity</em> pass by.</h1>
+      <p>Find the details. Check the fit. Keep it within reach.</p>
+      <button class="primary-btn" id="scanBtn"><span>✦</span> Scan this page <kbd>↵</kbd></button>
+      <div class="privacy-note">⌁ Scans only when you click. Your browsing stays yours.</div>
+    </section>
+
+    <section id="emptyState" class="empty-state">
+      <div class="empty-icon">⌕</div>
+      <strong>Ready when you are</strong>
+      <p>Open an internship, scholarship, hackathon or student programme page, then scan it here.</p>
+      <div class="category-row"><span>INTERNSHIPS</span><span>SCHOLARSHIPS</span><span>HACKATHONS</span></div>
+    </section>
+
+    <section id="resultSection" class="result-section hidden">
+      <div class="section-heading"><div><div class="eyebrow">PAGE SCAN RESULTS</div><h2>Opportunity found</h2></div><span class="status-pill"><i></i> DETECTED</span></div>
+      <article class="opportunity-card">
+        <div class="card-top"><span id="categoryTag" class="category-tag">OPPORTUNITY</span><span id="confidence" class="confidence">PAGE MATCH</span></div>
+        <h3 id="oppTitle">Opportunity title</h3>
+        <p id="oppOrg" class="org-line">Organisation not identified</p>
+        <div class="details-grid">
+          <div class="detail"><span>DEADLINE</span><strong id="oppDeadline">Not specified</strong></div>
+          <div class="detail"><span>LOCATION</span><strong id="oppLocation">Not specified</strong></div>
+          <div class="detail"><span>ELIGIBILITY</span><strong id="oppEligibility">Needs review</strong></div>
+          <div class="detail"><span>BENEFIT</span><strong id="oppBenefit">Not specified</strong></div>
+        </div>
+        <div class="summary-box"><div class="summary-title">QUICK BRIEF</div><p id="oppSummary">Review the opportunity details on the source page before applying.</p></div>
+        <div class="card-actions">
+          <button class="primary-btn save-btn" id="saveBtn">＋ Save opportunity</button>
+          <button class="secondary-btn" id="openSourceBtn" title="Open original page">↗</button>
+        </div>
+      </article>
+      <div class="disclaimer">Details are extracted from the current page. Always verify eligibility and deadlines on the official source.</div>
+    </section>
+
+    <section id="noMatch" class="no-match hidden">
+      <div class="empty-icon">⌁</div><strong>No clear opportunity detected</strong>
+      <p>This page may not contain a recognisable opportunity. Try a page with the official description or application details.</p>
+      <button class="secondary-wide" id="retryBtn">Scan again</button>
+    </section>
+
+    <section class="bottom-row">
+      <div><span class="live-dot"></span> <span id="savedCount">0 saved</span></div>
+      <button id="openDashboard" class="text-btn">My saved opportunities ↗</button>
+    </section>
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
